@@ -1,0 +1,33 @@
+:root {
+    /* Paleta de Cores */
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #18bc9c;
+    --cor-sucesso: #28a745;
+    --cor-perigo: #dc3545;
+    --cor-aviso: #ffc107;
+    --cor-info: #3498db;
+    --cor-neutra-clara: #ecf0f1;
+    --cor-neutra-escura: #34495e;
+    --cor-texto: #2c3e50;
+
+    /* Tipografia */
+    --fonte-principal: 'Poppins', sans-serif;
+    --tamanho-fonte-base: 16px;
+    --tamanho-fonte-h1: 3rem;
+    --tamanho-fonte-h2: 2.25rem;
+    --tamanho-fonte-h3: 1.75rem;
+    --tamanho-fonte-p: 1rem;
+    --tamanho-fonte-small: 0.875rem;
+
+    /* Espaçamento Modular */
+    --espacamento-1: 8px;
+    --espacamento-2: 16px;
+    --espacamento-3: 24px;
+    --espacamento-4: 32px;
+    --espacamento-5: 48px;
+    --espacamento-6: 64px;
+
+    /* Outras Variáveis */
+    --raio-borda: 5px;
+    --sombra-caixa: 0 4px 6px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,136 @@
+/* Header e Navegação */
+header {
+    background-color: #fff;
+    box-shadow: var(--sombra-caixa);
+    padding: var(--espacamento-2) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--espacamento-4) !important;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    padding: var(--espacamento-2) var(--espacamento-3);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav .active a {
+    color: var(--cor-secundaria);
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: var(--sombra-caixa);
+    border-radius: var(--raio-borda);
+    padding: var(--espacamento-2) 0;
+    min-width: 220px;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    width: 100%;
+}
+
+/* Menu Hamburguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+    }
+    .main-nav.active {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Botões */
+.btn {
+    padding: var(--espacamento-2) var(--espacamento-4);
+    border-radius: var(--raio-borda);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-primario {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+.btn-primario:hover {
+    background-color: #fff;
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-caixa);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-body {
+    padding: var(--espacamento-4);
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: var(--espacamento-3);
+}
+.form-control {
+    width: 100%;
+    padding: var(--espacamento-2);
+    border: 1px solid #ccc;
+    border-radius: var(--raio-borda);
+}

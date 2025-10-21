@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Voluntário - ONG Transformar</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">ONG Transformar</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="has-dropdown">
+                        <a href="projetos.html">Projetos</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Educação</a></li>
+                            <li><a href="#">Meio Ambiente</a></li>
+                        </ul>
+                    </li>
+                    <li class="active"><a href="cadastro.html">Seja Voluntário</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--espacamento-5);">
+                    <h1>Seja um Voluntário</h1>
+                    <p>Faça parte da nossa equipe e ajude a construir um futuro melhor.</p>
+                </div>
+
+                <form class="grid">
+                    <div class="form-group" style="grid-column: span 12;">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 6;">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 6;">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 6;">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 6;">
+                        <label for="nascimento">Data de Nascimento</label>
+                        <input type="date" id="nascimento" name="nascimento" class="form-control" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 12; text-align: center; margin-top: var(--espacamento-4);">
+                        <button type="submit" class="btn btn-primario">Enviar Cadastro</button>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ONG Transformar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
