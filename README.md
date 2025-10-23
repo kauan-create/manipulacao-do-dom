@@ -1,25 +1,24 @@
-# 🚀 Meu Novo Projeto de Front-End: Um SPA com CSS Moderno!
+# 🚀 Projeto Website com Manipulação do DOM
 
 Olá! 👋
 
-Este repositório é o meu laboratório para criar um site incrível com foco total em CSS moderno e boas práticas de front-end. A ideia é construir uma experiência de usuário fluida e super agradável, quase como uma SPA (Single Page Application).
+Este repositório é um projeto de estudo onde decidi aprofundar meus conhecimentos em tecnologias front-end, com foco especial na criação de um código de alta qualidade e na manipulação do DOM com JavaScript.
 
-Aqui, minha paixão foi criar um código do qual me orgulho, pensando sempre na experiência de quem usa e em garantir que o site fique lindo em qualquer tela!
+O objetivo é construir uma plataforma robusta, com uma ótima experiência de usuário e um visual acessível e bonito em qualquer dispositivo!
 
 ## ✨ O Que Eu Fiz
 
-A missão principal foi montar uma estrutura de front-end que seja profissional e fácil de crescer. Quis transformar um site que poderia ser simples em uma plataforma robusta e gostosa de navegar.
+A principal missão foi dar uma estrutura profissional ao projeto, combinando uma arquitetura CSS escalável com interatividade JavaScript, resultando em uma plataforma robusta e muito mais agradável de navegar.
 
 ## 🛠️ Tecnologias e Ferramentas Que Usei:
 
-*   **HTML5**: Para uma base semântica e bem estruturada.
-*   **CSS3**: Abusei do Grid, Flexbox e de Variáveis CSS para criar layouts flexíveis e um design consistente.
-*   **JavaScript**: Dando vida e interatividade para a página.
+* **HTML5**
+* **CSS3** (Usando intensamente CSS Grid, Flexbox e Variáveis)
+* **JavaScript** (Para manipulação do DOM e interatividade)
 
-## 🎯 O Que Eu Implementei de Legal:
+## 🎯 Mudanças Que Implementei:
 
-*   **Meu Próprio Design System**: Criei um sistema de design do zero! Isso inclui uma paleta de cores bem definida em `variables.css`, tipografia e espaçamentos que fazem o site ter uma cara única e ser fácil de atualizar.
-*   **Responsividade Total**: Usei Grid e Flexbox para que tudo se encaixe perfeitamente, seja no celular ou num monitor gigante.
-*   **Navegação Intuitiva**: Estruturei a navegação entre as diferentes seções do site (`index.html`, `projetos.html`, `cadastro.html`) para ser clara e direta.
-*   **Componentes Reutilizáveis**: Desenvolvi várias peças que posso usar em qualquer lugar, como cards, botões com animações de hover e formulários que não só são bonitos, mas também funcionais.
-*   **Código CSS Organizado**: Separei tudo em módulos (`main.css`, `layout.css`, `components.css`, `variables.css`). Assim, o projeto fica muito mais fácil de manter e escalar!
+* **Design e Estilo**: Criei um Design System completo! Isso inclui variáveis CSS (`variables.css`) para a paleta de cores e um sistema de espaçamento modular, garantindo uma identidade visual consistente e de fácil manutenção.
+* **Responsividade**: Usei Grid e Flexbox e defini vários breakpoints para garantir que a navegação seja tranquila no celular ou no desktop.
+* **Navegação e Estrutura**: O projeto foi estruturado com uma navegação clara entre as páginas (`index.html`, `projetos.html`, `cadastro.html`) e preparado para receber interações ricas via JavaScript.
+* **Componentes**: Desenvolvi peças reutilizáveis como Cards de Projetos responsivos, botões com feedback visual (estados hover, active, etc.) e formulários estilizados com validação, tudo organizado em `components.css`.
