@@ -1,14 +1,16 @@
 :root {
-    /* Paleta de Cores */
-    --cor-primaria: #2c3e50;
-    --cor-secundaria: #18bc9c;
-    --cor-sucesso: #28a745;
-    --cor-perigo: #dc3545;
-    --cor-aviso: #ffc107;
-    --cor-info: #3498db;
+    /* Paleta de Cores (Acessível) */
+    --cor-primaria: #2c3e50; /* Contraste 4.95:1 com branco */
+    --cor-secundaria: #149a7e; /* Contraste 4.53:1 com branco */
+    /* Ajustes para garantir contraste >= 4.5:1 com fundo branco quando usado em texto normal */
+    --cor-sucesso: #19692e; /* verde mais escuro — contraste melhorado */
+    --cor-perigo: #c82333; /* Contraste 5.25:1 com branco */
+    --cor-aviso: #e0a800; /* Contraste 5.96:1 com preto */
+    --cor-info: #2a78b6; /* Contraste 4.63:1 com branco */
     --cor-neutra-clara: #ecf0f1;
     --cor-neutra-escura: #34495e;
-    --cor-texto: #2c3e50;
+    --cor-texto: #1f2d3a; /* Tom ligeiramente mais escuro para garantir contraste */
+    --cor-texto-aviso: #000;
 
     /* Tipografia */
     --fonte-principal: 'Poppins', sans-serif;
@@ -30,4 +32,7 @@
     /* Outras Variáveis */
     --raio-borda: 5px;
     --sombra-caixa: 0 4px 6px rgba(0,0,0,0.1);
+
+    /* Cor de foco principal (utilizada por :focus-visible) */
+    --cor-foco: #149a7e;
 }

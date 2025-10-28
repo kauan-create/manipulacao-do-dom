@@ -1,0 +1,66 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
+      - name: Run accessibility tests (pa11y) and generate reports
+        # Start a static server, run pa11y checks and generate HTML reports
+        run: |
+          npm run serve:dist &
+          # wait for server to start
+          n=0; until curl -sS http://127.0.0.1:8080 >/dev/null || [ $n -ge 15 ]; do n=$((n+1)); sleep 1; done
+          npx pa11y http://127.0.0.1:8080 || (echo "Pa11y found issues on index"; exit 1)
+          npx pa11y http://127.0.0.1:8080/projetos.html || (echo "Pa11y found issues on projetos"; exit 1)
+          npx pa11y http://127.0.0.1:8080/cadastro.html || (echo "Pa11y found issues on cadastro"; exit 1)
+          # generate HTML reports
+          npx pa11y http://127.0.0.1:8080 --reporter html > pa11y-report-index.html || true
+          npx pa11y http://127.0.0.1:8080/projetos.html --reporter html > pa11y-report-projetos.html || true
+          npx pa11y http://127.0.0.1:8080/cadastro.html --reporter html > pa11y-report-cadastro.html || true
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist/
+      - name: Upload accessibility reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: pa11y-reports
+          path: |
+            pa11y-report-index.html
+            pa11y-report-projetos.html
+            pa11y-report-cadastro.html
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

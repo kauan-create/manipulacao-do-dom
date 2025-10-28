@@ -1,0 +1,29 @@
+{
+  "name": "ong-transformar-site",
+  "version": "1.0.0",
+  "description": "Site institucional da ONG Transformar - entrega com foco em acessibilidade e build para produção",
+  "private": true,
+  "scripts": {
+    "build:css": "cleancss -o dist/styles.min.css styles/*.css --s0",
+    "build:js": "terser script.js -c -m -o dist/script.min.js",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o dist/index.html index.html && html-minifier-terser -o dist/projetos.html projetos.html && html-minifier-terser -o dist/cadastro.html cadastro.html",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "serve": "http-server -c-1 . -p 8080",
+    "serve:dist": "http-server dist -p 8080",
+    "test:a11y": "pa11y http://127.0.0.1:8080 && pa11y http://127.0.0.1:8080/projetos.html && pa11y http://127.0.0.1:8080/cadastro.html",
+    "test:a11y:report": "pa11y http://127.0.0.1:8080 --reporter html > pa11y-report-index.html && pa11y http://127.0.0.1:8080/projetos.html --reporter html > pa11y-report-projetos.html && pa11y http://127.0.0.1:8080/cadastro.html --reporter html > pa11y-report-cadastro.html",
+    "test:axe": "npx @axe-core/cli http://127.0.0.1:8080 --save --output-file=axe-report.json",
+    "test:axe:report": "npx @axe-core/cli http://127.0.0.1:8080 --save --output-file=axe-report.json --output=html && mv axe-report.html axe-report-index.html || true"
+  },
+  "axe": {
+    "version": "1.0.0"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^6.0.0",
+    "terser": "^5.0.0",
+    "html-minifier-terser": "^6.0.0",
+    "http-server": "^14.1.1",
+    "pa11y": "^6.0.0"
+    ,"@axe-core/cli": "^5.0.0"
+  }
+}
