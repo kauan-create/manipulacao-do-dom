@@ -51,7 +51,8 @@ header .container {
     min-width: 220px;
 }
 
-.has-dropdown:hover .dropdown {
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
     display: block;
 }
 

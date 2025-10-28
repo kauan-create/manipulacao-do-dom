@@ -7,32 +7,38 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-    <header>
+    <header role="banner">
         <div class="container">
             <a href="index.html" class="logo">ONG Transformar</a>
-            <nav class="main-nav">
+            <nav class="main-nav" id="main-nav-container" role="navigation" aria-label="Navegação principal">
                 <ul>
-                    <li class="active"><a href="index.html">Início</a></li>
+                    <li class="active"><a href="index.html" aria-current="page">Início</a></li>
                     <li class="has-dropdown">
-                        <a href="projetos.html">Projetos</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Educação</a></li>
-                            <li><a href="#">Meio Ambiente</a></li>
+                        <a href="projetos.html" aria-haspopup="true" aria-expanded="false">Projetos</a>
+                        <ul class="dropdown" role="menu" aria-label="Submenu de projetos">
+                            <li role="none"><a role="menuitem" href="#">Educação</a></li>
+                            <li role="none"><a role="menuitem" href="#">Meio Ambiente</a></li>
                         </ul>
                     </li>
                     <li><a href="cadastro.html">Seja Voluntário</a></li>
                 </ul>
             </nav>
-            <button class="hamburger">&#9776;</button>
+            <button class="hamburger" aria-label="Abrir menu de navegação" aria-controls="main-nav-container" aria-expanded="false">&#9776;</button>
+            <div class="theme-switcher">
+                <button data-theme="light" class="theme-btn active" aria-label="Tema claro">Claro</button>
+                <button data-theme="dark" class="theme-btn" aria-label="Tema escuro">Escuro</button>
+                <button data-theme="high-contrast" class="theme-btn" aria-label="Tema de alto contraste">Contraste</button>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <section class="section">
             <div class="container">
                 <div class="grid">
-                    <div style="grid-column: span 12; text-align: center;">
+                    <div class="grid-col-12 text-center">
                         <h1>Transformando Vidas, Construindo Futuros</h1>
                         <p>Somos uma organização dedicada a promover a mudança social através de projetos de educação e sustentabilidade.</p>
                         <a href="projetos.html" class="btn btn-primario">Conheça Nossos Projetos</a>
@@ -44,11 +50,11 @@
         <section class="section section-cinza">
             <div class="container">
                 <div class="grid">
-                    <div style="grid-column: span 6;">
+                    <div class="grid-col-6">
                         <h2>Nossa Missão</h2>
                         <p>Gerar impacto social positivo e duradouro, oferecendo oportunidades e recursos para comunidades carentes, com foco em educação de qualidade e consciência ambiental.</p>
                     </div>
-                    <div style="grid-column: span 6;">
+                    <div class="grid-col-6">
                         <h2>Nossa Visão</h2>
                         <p>Ser uma organização de referência, reconhecida pela transparência, eficiência e pelo legado de transformação na vida das pessoas e no meio ambiente.</p>
                     </div>

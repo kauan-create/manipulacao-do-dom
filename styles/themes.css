@@ -1,0 +1,79 @@
+/* Theme Switcher */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn {
+    background: none;
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn.active, .theme-btn:hover {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+
+/* Dark Mode Theme */
+[data-theme='dark'] {
+    --cor-primaria: #18bc9c;
+    --cor-secundaria: #2c3e50;
+    --cor-neutra-clara: #2c3e50;
+    --cor-neutra-escura: #ecf0f1;
+    --cor-texto: #ecf0f1;
+    background-color: #34495e;
+}
+
+[data-theme='dark'] .section-cinza {
+    background-color: #2c3e50;
+    border-color: #34495e;
+}
+
+[data-theme='dark'] header, [data-theme='dark'] .card, [data-theme='dark'] .dropdown {
+    background-color: #34495e;
+}
+
+/* High Contrast Theme */
+[data-theme='high-contrast'] {
+    --cor-primaria: #000;
+    --cor-secundaria: #000;
+    --cor-neutra-clara: #fff;
+    --cor-neutra-escura: #000;
+    --cor-texto: #000;
+    background-color: #fff;
+}
+
+[data-theme='high-contrast'] .section-cinza, [data-theme='high-contrast'] header, [data-theme='high-contrast'] .card, [data-theme='high-contrast'] .dropdown {
+    background-color: #fff;
+    border-color: #000;
+}
+
+[data-theme='high-contrast'] .btn-primario {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+[data-theme='high-contrast'] a, [data-theme='high-contrast'] p, [data-theme='high-contrast'] h1, [data-theme='high-contrast'] h2, [data-theme='high-contrast'] h3 {
+    color: #000 !important;
+}
+
+/* Focus styling adjusted per theme to ensure strong visibility */
+:root, [data-theme='light'] {
+    --foco-outline: 3px solid var(--cor-foco);
+}
+
+[data-theme='dark'] :focus-visible, [data-theme='dark'] button:focus-visible, [data-theme='dark'] a:focus-visible {
+    outline: 3px solid rgba(255,255,255,0.9);
+    outline-offset: 3px;
+}
+
+[data-theme='high-contrast'] :focus-visible, [data-theme='high-contrast'] button:focus-visible, [data-theme='high-contrast'] a:focus-visible {
+    outline: 3px solid #ff0; /* amarelo forte no alto contraste */
+    outline-offset: 3px;
+}

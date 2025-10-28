@@ -3,3 +3,60 @@
 @import url('variables.css');
 @import url('layout.css');
 @import url('components.css');
+@import url('utility.css');
+@import url('themes.css');
+
+/* Accessibility helpers */
+.skip-link {
+	position: absolute;
+	left: -999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.skip-link:focus {
+	left: 1rem;
+	top: 1rem;
+	width: auto;
+	height: auto;
+	background: var(--cor-neutra-clara);
+	color: var(--cor-texto);
+	padding: 0.5rem 1rem;
+	z-index: 9999;
+	border-radius: 4px;
+	box-shadow: var(--sombra-caixa);
+}
+
+/* Visible focus for keyboard users */
+:focus {
+	outline: none;
+}
+:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+	outline: 3px solid var(--cor-secundaria);
+	outline-offset: 3px;
+}
+
+/* Prefer reduced motion for users who request it */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+/* Ensure interactive elements have sufficient hit area */
+.theme-btn, .hamburger, .btn {
+	min-height: 40px;
+	min-width: 44px;
+}
+
+/* Dropdown basic accessibility */
+.has-dropdown > .dropdown {
+	display: none;
+}
+.has-dropdown[aria-expanded='true'] > .dropdown,
+.has-dropdown .dropdown[aria-hidden='false'] {
+	display: block;
+}

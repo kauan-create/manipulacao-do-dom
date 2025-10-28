@@ -1,0 +1,42 @@
+/* Classes Utilitárias */
+
+/* Grid */
+.grid-col-6 {
+    grid-column: span 6;
+}
+
+.grid-col-12 {
+    grid-column: span 12;
+}
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Margin */
+.mb-5 {
+    margin-bottom: var(--espacamento-5);
+}
+
+.mt-4 {
+    margin-top: var(--espacamento-4);
+}
+
+.card-img-top {
+    width: 100%;
+}
+
+/* Visual hidden (para leitores de tela) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Utilities de espaçamento para foco */
+.focus-ring {
+  box-shadow: 0 0 0 3px rgba(20,154,126,0.15);
+}
